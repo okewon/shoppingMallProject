@@ -7,7 +7,7 @@ public class Controller {
 	public static void main(String[] args) {
 		new Controller().start();
 	}
-
+	
 	private void start() {
 		Scanner s = new Scanner(System.in);
 		
@@ -15,13 +15,12 @@ public class Controller {
 		
 		do {
 			
-			
 			choice = s.nextLine();
 			
 			switch(choice){
-			
 				default:
-					break;
+					
+				break;
 			}
 		} while(choice.equals("q") || choice.equals("Q"));
 	}

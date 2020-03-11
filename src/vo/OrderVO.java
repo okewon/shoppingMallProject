@@ -3,26 +3,41 @@ package vo;
 import java.util.Date;
 
 public class OrderVO {
-	private Date Buy_date;
-	private String Product_code;
-	private int Buy_count;
-	private Date Order_date;
-	private String Delivery_status;
+	private String Order_code; //
+	private String Product_code; //
+	private String Product_name; //
+	private String User_id;
+	private int Buy_count; //
+	private Date Order_date; //
+	private String Delivery_status; //
 	private int User_phone_num;
 	private String Member_add1;
-	private String Delivery_waybill;
+	private String Delivery_waybill;//운송장번호는 order_code를 해쉬값으로 만들어서 저장
+	private String change_order; //
 	
-	public Date getBuy_date() {
-		return Buy_date;
+	public String getOrder_code() {
+		return Order_code;
 	}
-	public void setBuy_date(Date buy_date) {
-		Buy_date = buy_date;
+	public void setOrder_code(String order_code) {
+		Order_code = order_code;
 	}
 	public String getProduct_code() {
 		return Product_code;
 	}
 	public void setProduct_code(String product_code) {
 		Product_code = product_code;
+	}
+	public String getProduct_name() {
+		return Product_name;
+	}
+	public void setProduct_name(String product_name) {
+		Product_name = product_name;
+	}
+	public String getUser_id() {
+		return User_id;
+	}
+	public void setUser_id(String user_id) {
+		User_id = user_id;
 	}
 	public int getBuy_count() {
 		return Buy_count;
@@ -60,5 +75,12 @@ public class OrderVO {
 	public void setDelivery_waybill(String delivery_waybill) {
 		Delivery_waybill = delivery_waybill;
 	}
-
+	public String getChange_order() {
+		return change_order;
+	}
+	public void setChange_order(String change_order) {
+		this.change_order = change_order;
+	}
+	
+	
 }

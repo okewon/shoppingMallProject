@@ -7,8 +7,9 @@ public class ReviewVO{
 	private String Review_name;
 	private String Review_content;
 	private Date Review_date;
-	private String Member_id;
+	private String User_id;
 	private String Product_code;
+	private String product_name;
 	
 	public int getReview_num() {
 		return Review_num;
@@ -34,11 +35,11 @@ public class ReviewVO{
 	public void setReview_date(Date review_date) {
 		Review_date = review_date;
 	}
-	public String getMember_id() {
-		return Member_id;
+	public String getUser_id() {
+		return User_id;
 	}
-	public void setMember_id(String member_id) {
-		Member_id = member_id;
+	public void setUser_id(String member_id) {
+		User_id = member_id;
 	}
 	public String getProduct_code() {
 		return Product_code;
@@ -46,5 +47,11 @@ public class ReviewVO{
 	public void setProduct_code(String product_code) {
 		Product_code = product_code;
 	}	
+	public String getProduct_name() {
+		return product_name;
+	}
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
+	}
 	
 }

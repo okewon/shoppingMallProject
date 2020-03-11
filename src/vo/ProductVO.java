@@ -10,7 +10,7 @@ public class ProductVO{
 	private int Product_count;
 	private String Product_content;
 	private Date Product_date;
-	private int Product_size;
+	private String Product_size;
 	private String Product_color;
 	
 	public String getProduct_code() {
@@ -55,10 +55,10 @@ public class ProductVO{
 	public void setProduct_date(Date product_date) {
 		Product_date = product_date;
 	}
-	public int getProduct_size() {
+	public String getProduct_size() {
 		return Product_size;
 	}
-	public void setProduct_size(int product_size) {
+	public void setProduct_size(String product_size) {
 		Product_size = product_size;
 	}
 	public String getProduct_color() {

@@ -87,6 +87,7 @@ public class UserVO {
 	}
 	public void setUser_coupon(String user_coupon) {
 		User_coupon = user_coupon;
-	}	
+	}
+		
 
 }
