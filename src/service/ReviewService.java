@@ -43,8 +43,10 @@ public class ReviewService {
 		reviewVO.setProduct_name(product_name);
 		reviewVO.setUser_id(User_id);
 		reviewVO.setReview_date(Review_date);
+		reviewVO.setReview_num(Review_num);
 	
 		reviewDao.enrollReviewComment(reviewVO);
+		Review_num++;
 	}
 	
 	public void modifyReviewComment() {
@@ -59,15 +61,10 @@ public class ReviewService {
 		System.out.print("변경될 제목을 입력하세요.");
 		String Modified_review_name = s.nextLine();
 		System.out.println("변경될 내용을 입력하세요.");
-		String Review_content = s.nextLine();
+		String Modified_review_content = s.nextLine();
 		Date Review_date = new Date();
 		
-		ReviewVO reviewVO = new ReviewVO();
-		reviewVO.setReview_name(Modified_review_name);
-		reviewVO.setReview_content(Review_content);
-		reviewVO.setReview_date(Review_date);
-		
-		reviewDao.ModifyReviewComment(reviewVO, Review_name);
+		reviewDao.ModifyReviewComment(product_name, Review_name, Modified_review_name, Modified_review_content, Review_date);
 	}
 	
 	public void deleteReviewComment() {

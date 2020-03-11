@@ -41,9 +41,11 @@ public class GongjiService {
 		gongji.setGongji_content(Gongji_content);
 		gongji.setGongji_date(Gongji_date);
 		gongji.setGongji_id(Gongji_id);
+		gongji.setGongji_num(Gongji_num);
 		
 		gongjiDao.enrollGongji(gongji);
 		System.out.println("공지가 등록되었습니다.");
+		Gongji_num++;
 	}
 	
 	public void modifyGongji() {

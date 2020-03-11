@@ -49,7 +49,7 @@ public class ProductService {
 			System.out.print("상품의 색상을 입력하세요. ");
 			String product_color = s.nextLine();
 			System.out.print("상품의 품목을 입력하세요. ");
-			System.out.println("구분(T: 티셔츠, P: 바지, O: 외투, B: 가방, S: 신발, A: 악세사리, H: 모자) :");
+			System.out.print("구분(T: 티셔츠, P: 바지, O: 외투, B: 가방, S: 신발, A: 악세사리, H: 모자) :");
 			String product_type = s.nextLine();
 			switch (product_type) {
 			case "T":
@@ -70,7 +70,7 @@ public class ProductService {
 				System.out.println("재고 수량이 0개 이하인 경우 등록할 수 없습니다.\n");
 				continue;
 			}
-			System.out.print(product_name + "에 대한 상세 정보를 입력해주세요.");
+			System.out.print(product_name + "에 대한 상세 정보를 입력해주세요. ");
 			String product_content = s.nextLine();
 			Date product_date = new Date();
 			switch (product_type) {
@@ -121,15 +121,15 @@ public class ProductService {
 			System.out.println("등록된 상품을 수정합니다.\n");
 			System.out.print("수정하고자 하는 상품의 이름을 입력해주세요. ");
 			String product_name = s.nextLine();
-			System.out.println("수정하고자 하는 상품의 사이즈를 입력하세요.\n");
-			String Product_color = s.nextLine();
-			System.out.println("삭제하고자 하는 상품의 색상을 입력하세요.\n");
-			String Product_size = s.nextLine();
-			System.out.print("수정하고자 하는 상품의 가격을 입력해주세요.");
 			if(product_name.equals("Q")) {
 				System.out.println("상품 수정이 종료되었습니다.");
-				break;
+				return;
 			}
+			System.out.println("수정하고자 하는 상품의 사이즈를 입력하세요.\n");
+			String Product_color = s.nextLine();
+			System.out.println("수정하고자 하는 상품의 색상을 입력하세요.\n");
+			String Product_size = s.nextLine();
+			System.out.print("수정하고자 하는 상품의 가격을 입력해주세요.");
 			System.out.print("수정하고자 하는 상품의 가격을 입력하시오. ");
 			int product_price = Integer.parseInt(s.nextLine());
 			if(product_price < 0) {
@@ -215,13 +215,13 @@ public class ProductService {
 		do {
 			System.out.println("삭제하고자 하는 상품의 이름을 입력해주세요.");
 			String product_name = s.nextLine();
-			System.out.println("삭제하고자 하는 상품의 색상과 사이즈를 입력하세요.\n");
-			String Product_color = s.nextLine();
-			String Product_size = s.nextLine();
 			if(product_name.equals("Q")) {
 				System.out.println("상품 삭제가 종료되었습니다.\n");
 				break;
 			}
+			System.out.println("삭제하고자 하는 상품의 색상과 사이즈를 입력하세요.\n");
+			String Product_color = s.nextLine();
+			String Product_size = s.nextLine();
 			productDao.deleteProduct(product_name, Product_size, Product_color);
 		}while(true);
 	}

@@ -8,8 +8,9 @@ public class QnaVO{
 	private String Qna_content;
 	private String Qna_password;
 	private Date Qna_date;
-	private String Member_id;
+	private String User_id;
 	private String Product_code;
+	private String Product_name;
 	
 	public int getQna_num() {
 		return Qna_num;
@@ -41,17 +42,23 @@ public class QnaVO{
 	public void setQna_date(Date qna_date) {
 		Qna_date = qna_date;
 	}
-	public String getMember_id() {
-		return Member_id;
+	public String getUser_id() {
+		return User_id;
 	}
-	public void setMember_id(String member_id) {
-		Member_id = member_id;
+	public void setUser_id(String member_id) {
+		User_id = member_id;
 	}
 	public String getProduct_code() {
 		return Product_code;
 	}
 	public void setProduct_code(String product_code) {
 		Product_code = product_code;
+	}
+	public String getProduct_name() {
+		return Product_name;
+	}
+	public void setProduct_name(String product_name) {
+		Product_name = product_name;
 	}
 	
 }

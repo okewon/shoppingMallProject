@@ -25,61 +25,66 @@ public class AdminController {
 	
 	public void AdiminMenu() {
 		Scanner s = new Scanner(System.in);
+		boolean loop = false;
 		
-		System.out.println("==================================");
-        System.out.println("||\t1.상품 조회   \t||"           );
-        System.out.println("||\t2.게시글 관리      \t||"             );
-        System.out.println("||\t3.회원 관리\t|| ");
-        System.out.println("||\t4.쇼핑몰 정보 조회      \t|| "               );
-        System.out.println("||\t5.주문 현황 조회      \t|| "               );
-        System.out.println("||\t6.종료      \t|| "               );
-        System.out.println("==================================");
-        System.out.print(">>");
-        
-        String choice = s.nextLine();
-        
-        switch(choice) {
-        case "1":
-        	System.out.println("상품 조회 메뉴");
-        	Product();
-        	break;
-        case "2":
-        	System.out.println("게시글 관리");
-        	board();
-        	break;
-        case "3":
-        	System.out.println("회원 관리");
-        	userManagement();
-        	break;
-        case "4":
-        	System.out.println("쇼핑몰 정보 조회");
-        	shopInfo();
-        	break;
-        case "5":
-        	System.out.println("주문 현황 조회");
-        	orderStatus();
-        	break;
-        case "6":
-        	System.out.println("종료되었습니다.");
-        	return;
-        default:
-        	System.out.println("잘못된 입력입니다.");
-        	break;
-        }
+		do {
+			
+			System.out.println("==================================");
+			System.out.println("||\t1.상품 조회\t\t||");
+			System.out.println("||\t2.게시글 관리\t\t||");
+			System.out.println("||\t3.회원 관리\t\t||");
+			System.out.println("||\t4.쇼핑몰 정보 조회\t\t||");
+			System.out.println("||\t5.주문 현황 조회\t\t||");
+			System.out.println("||\t6.종료\t\t\t|| "               );
+			System.out.println("==================================");
+			System.out.print(">> ");
+			
+			String choice = s.nextLine();
+			
+			switch(choice) {
+			case "1":
+				System.out.println("상품 조회 메뉴");
+				Product();
+				break;
+			case "2":
+				System.out.println("게시글 관리");
+				board();
+				break;
+			case "3":
+				System.out.println("회원 관리");
+				userManagement();
+				break;
+			case "4":
+				System.out.println("쇼핑몰 정보 조회");
+				shopInfo();
+				break;
+			case "5":
+				System.out.println("주문 현황 조회");
+				orderStatus();
+				break;
+			case "6":
+				System.out.println("종료되었습니다.");
+				loop = true;
+				return;
+			default:
+				System.out.println("잘못된 입력입니다.");
+				break;
+			}
+		} while(!loop);
 	}
 	
-	public void Product() {
+	private void Product() {
 		ProductService product = ProductService.getInstance();
 		Scanner s = new Scanner(System.in);
 		
 		System.out.println("==================================");
-        System.out.println("||\t1.상품 등록   \t||"           );
-        System.out.println("||\t2.상품 수정      \t||"             );
-        System.out.println("||\t3.상품 삭제\t|| ");
-        System.out.println("||\t4.상품 조회\t|| ");        
-        System.out.println("||\t5.종료      \t|| "               );
+        System.out.println("||\t1.상품 등록\t\t||");
+        System.out.println("||\t2.상품 수정\t\t||");
+        System.out.println("||\t3.상품 삭제\t\t||");
+        System.out.println("||\t4.상품 조회\t\t||");        
+        System.out.println("||\t5.종료\t\t\t||");
         System.out.println("==================================");
-        System.out.print(">>");
+        System.out.print(">> ");
         
         String choice = s.nextLine();
         
@@ -105,16 +110,16 @@ public class AdminController {
         }
 	}
 	
-	public void board() {
+	private void board() {
 		Scanner s = new Scanner(System.in);
 		
 		System.out.println("==================================");
-        System.out.println("||\t1.Notice   \t||"           );
-        System.out.println("||\t2.Reivew      \t||"             );
-        System.out.println("||\t3.QnA\t|| ");       
-        System.out.println("||\t4.종료      \t|| "               );
+        System.out.println("||\t1.Notice\t\t||");
+        System.out.println("||\t2.Reivew\t\t||");
+        System.out.println("||\t3.QnA\t\t\t||");       
+        System.out.println("||\t4.종료\t\t\t||");
         System.out.println("==================================");
-        System.out.print(">>");
+        System.out.print(">> ");
         
         String choice = s.nextLine();
         
@@ -137,18 +142,18 @@ public class AdminController {
         }
 	}
 	
-	public void notice() {
+	private void notice() {
 		Scanner s = new Scanner(System.in);
 		GongjiService gongji = GongjiService.getInstance();
 		
 		System.out.println("==================================");
-		System.out.println("||\t1.공지사항 조회\t|| ");       
-        System.out.println("||\t2.공지사항 등록   \t||"           );
-        System.out.println("||\t3.공지사항 수정      \t||"             );
-        System.out.println("||\t4.공지사항 삭제\t|| ");       
-        System.out.println("||\t5.종료      \t|| "               );
+		System.out.println("||\t1.공지사항 조회\t\t||");       
+        System.out.println("||\t2.공지사항 등록\t\t||"           );
+        System.out.println("||\t3.공지사항 수정\t\t||");
+        System.out.println("||\t4.공지사항 삭제\t\t||");       
+        System.out.println("||\t5.종료\t\t\t||");
         System.out.println("==================================");
-        System.out.print(">>");
+        System.out.print(">> ");
         
         String choice = s.nextLine();
         
@@ -174,17 +179,17 @@ public class AdminController {
         }
 	}
 	
-	public void review() {
+	private void review() {
 		Scanner s = new Scanner(System.in);
 		ReviewService review = ReviewService.getInstance();
 		
 		System.out.println("==================================");
-        System.out.println("||\t1.리뷰 조회   \t||"           );
-        System.out.println("||\t2.리뷰 댓글 작성     \t||"             );
-        System.out.println("||\t3.리뷰 댓글 삭제\t|| ");       
-        System.out.println("||\t4.종료      \t|| "               );
+        System.out.println("||\t1.리뷰 조회\t\t||");
+        System.out.println("||\t2.리뷰 댓글 작성\t\t||");
+        System.out.println("||\t3.리뷰 댓글 삭제\t\t||");       
+        System.out.println("||\t4.종료\t\t\t||");
         System.out.println("==================================");
-        System.out.print(">>");
+        System.out.print(">> ");
         
         String choice = s.nextLine();
         
@@ -207,29 +212,33 @@ public class AdminController {
         }
 	}
 	
-	public void QnA() {
+	private void QnA() {
 		Scanner s = new Scanner(System.in);
 		QnaService qna = QnaService.getInstance();
 		
 		System.out.println("==================================");
-        System.out.println("||\t1.QnA 조회   \t||"           );
-        System.out.println("||\t2.QnA 댓글 작성      \t||"             );
-        System.out.println("||\t3.QnA 댓글 수정\t|| ");       
-        System.out.println("||\t4.QnA 댓글 삭제\t|| ");       
-        System.out.println("||\t5.종료      \t|| "               );
+        System.out.println("||\t1.QnA 조회\t\t||");
+        System.out.println("||\t2.QnA 댓글 작성\t\t||");
+        System.out.println("||\t3.QnA 댓글 수정\t\t||");       
+        System.out.println("||\t4.QnA 댓글 삭제\t\t||");       
+        System.out.println("||\t5.종료\t\t\t||");
         System.out.println("==================================");
-        System.out.print(">>");
+        System.out.print(">> ");
         
         String choice = s.nextLine();
         
         switch(choice) {
         case "1":
+        	qna.showQna();
         	break;
         case "2":
+        	qna.enrollComment();
         	break;
         case "3":
+        	qna.modifyComment();
         	break;
         case "4":
+        	qna.deleteComment();
         	break;
         case "5":
         	System.out.println("QnA 게시글 관리가 종료됩니다.");
@@ -240,17 +249,17 @@ public class AdminController {
         }
 	}
 	
-	public void userManagement() {
+	private void userManagement() {
 		Scanner s = new Scanner(System.in);
 		UserManageMentService userManage = UserManageMentService.getInstance();
 		
 		System.out.println("==================================");
-		System.out.println("||\t1.회원 조회   \t||"           );
-        System.out.println("||\t2.회원 쿠폰/마일리지 관리   \t||"           );
-        System.out.println("||\t3.회원 삭제      \t||"             );
-        System.out.println("||\t4.종료\t|| ");
+		System.out.println("||\t1.회원 조회\t\t||");
+        System.out.println("||\t2.회원 쿠폰/마일리지 관리\t||");
+        System.out.println("||\t3.회원 삭제\t\t||");
+        System.out.println("||\t4.종료\t\t\t||");
         System.out.println("==================================");
-        System.out.print(">>");
+        System.out.print(">> ");
         
         String choice = s.nextLine();
         
@@ -273,16 +282,16 @@ public class AdminController {
         }
 	}
 	
-	public void shopInfo() {
+	private void shopInfo() {
 		Scanner s = new Scanner(System.in);
 		ShopService shop = ShopService.getInstance();
 		
 		System.out.println("==================================");
-        System.out.println("||\t1.쇼핑몰 정보 조회   \t||"          );
-        System.out.println("||\t2.쇼핑몰 정보 수정   \t||"          );        
-        System.out.println("||\t3.종료   \t||"          );
+        System.out.println("||\t1.쇼핑몰 정보 조회\t\t||");
+        System.out.println("||\t2.쇼핑몰 정보 수정\t\t||");        
+        System.out.println("||\t3.종료\t\t\t||");
         System.out.println("==================================");
-        System.out.print(">>");
+        System.out.print(">> ");
         
         String choice = s.nextLine();
         
@@ -302,18 +311,18 @@ public class AdminController {
         }
 	}
 	
-	public void orderStatus() {
+	private void orderStatus() {
 		Scanner s = new Scanner(System.in);
 		OrderService order = OrderService.getInstance();
 		
 		System.out.println("==================================");
-        System.out.println("||\t1.주문현황 조회   \t||"           );
-        System.out.println("||\t2.변경된 주문 조회     \t||"             );
-        System.out.println("||\t3.운송장 번호 등록\t|| ");
-        System.out.println("||\t4.배송 현황 변경      \t|| "               );
-        System.out.println("||\t5.종료      \t|| "               );
+        System.out.println("||\t1.주문현황 조회\t\t||");
+        System.out.println("||\t2.변경된 주문 조회\t\t||");
+        System.out.println("||\t3.운송장 번호 등록\t\t||");
+        System.out.println("||\t4.배송 현황 변경\t\t||");
+        System.out.println("||\t5.종료\t\t\t||");
         System.out.println("==================================");
-        System.out.print(">>");
+        System.out.print(">> ");
         
         String choice = s.nextLine();
         

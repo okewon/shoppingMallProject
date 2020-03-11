@@ -10,7 +10,7 @@ public class OrderVO {
 	private int Buy_count; //
 	private Date Order_date; //
 	private String Delivery_status; //
-	private int User_phone_num;
+	private String User_phone_num;
 	private String Member_add1;
 	private String Delivery_waybill;//운송장번호는 order_code를 해쉬값으로 만들어서 저장
 	private String change_order; //
@@ -57,10 +57,10 @@ public class OrderVO {
 	public void setDelivery_status(String delivery_status) {
 		Delivery_status = delivery_status;
 	}
-	public int getUser_phone_num() {
+	public String getUser_phone_num() {
 		return User_phone_num;
 	}
-	public void setUser_phone_num(int user_phone_num) {
+	public void setUser_phone_num(String user_phone_num) {
 		User_phone_num = user_phone_num;
 	}
 	public String getMember_add1() {
