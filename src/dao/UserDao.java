@@ -30,7 +30,7 @@ private static UserDao instance;
 		String id = user.getUser_id();
 
 		database.tb_user.add(user);
-		System.out.println("<회원가입 성공> "+user.getUser_name()+"님 반갑습니다!");
+		System.out.println("<회원가입 성공> "+user.getUser_name()+"님 반갑습니다!\n");
 		
 	}
 	

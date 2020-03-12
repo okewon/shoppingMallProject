@@ -21,7 +21,6 @@ public class Controller {
 		
 		do {
 			u_service.logo2();
-			u_service.logo3();
 			System.out.println("==================================");
 			System.out.println("||\t1.회원 가입	\t||"           );
 			System.out.println("||\t2.로그인		\t||"             );

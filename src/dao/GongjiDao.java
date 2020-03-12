@@ -65,12 +65,12 @@ public class GongjiDao {
 			System.out.println("등록된 공지가 존재하지 않습니다.");
 		}else {
 			System.out.println("------------------------------------------------------------------------------------------------------");
-			System.out.println("순서 번호\t작성자\t게시글 제목\t게시글 내용\t게시 일자");
+			System.out.println("순서 번호\t\t작성자\t\t게시글 제목\t\t게시글 내용\t\t게시 일자");
 			System.out.println("------------------------------------------------------------------------------------------------------");
 			for(int i = 0; i < database.tb_gongji.size(); i++) {
 			    System.out.println(database.tb_gongji.get(i).getGongji_num() + "\t" + database.tb_gongji.get(i).getGongji_id() + "\t" + database.tb_gongji.get(i).getGongji_name() + "\t" + database.tb_gongji.get(i).getGongji_content() + "\t" + database.tb_gongji.get(i).getGongji_date());
 			}
-			System.out.println("------------------------------------------------------------------------------------------------------");
+			System.out.println("------------------------------------------------------------------------------------------------------\n");
 		}
 	}
 }

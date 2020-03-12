@@ -27,6 +27,8 @@ public class AdminController {
 		Scanner s = new Scanner(System.in);
 		boolean loop = false;
 		
+		System.out.println("\n\t관리자 모드 진입");
+		
 		do {
 			
 			System.out.println("==================================");
@@ -43,31 +45,31 @@ public class AdminController {
 			
 			switch(choice) {
 			case "1":
-				System.out.println("상품 조회 메뉴");
+				System.out.println("\n\t상품 조회 메뉴");
 				Product();
 				break;
 			case "2":
-				System.out.println("게시글 관리");
+				System.out.println("\n\t게시글 관리");
 				board();
 				break;
 			case "3":
-				System.out.println("회원 관리");
+				System.out.println("\n\t회원 관리");
 				userManagement();
 				break;
 			case "4":
-				System.out.println("쇼핑몰 정보 조회");
+				System.out.println("\n\t쇼핑몰 정보 조회");
 				shopInfo();
 				break;
 			case "5":
-				System.out.println("주문 현황 조회");
+				System.out.println("\n\t주문 현황 조회");
 				orderStatus();
 				break;
 			case "6":
-				System.out.println("종료되었습니다.");
+				System.out.println("\t종료되었습니다.");
 				loop = true;
 				return;
 			default:
-				System.out.println("잘못된 입력입니다.");
+				System.out.println("\t잘못된 입력입니다.");
 				break;
 			}
 		} while(!loop);
@@ -268,10 +270,10 @@ public class AdminController {
         	userManage.showUser();
         	break;
         case "2":
-        	userManage.deleteUser();
+        	userManage.modifyUser();
         	break;
         case "3":
-        	userManage.modifyUser();
+        	userManage.deleteUser();
         	break;
         case "4":
         	System.out.println("회원 관리가 종료됩니다.");

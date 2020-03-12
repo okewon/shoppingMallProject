@@ -24,15 +24,15 @@ public class ShopService {
 		Scanner s = new Scanner(System.in);
 		
 		System.out.println("쇼핑몰의 정보를 수정합니다.\n");
-		System.out.print("변경하고자 하는 쇼핑몰 고유 코드를 입력하시오.");
+		System.out.print("변경하고자 하는 쇼핑몰 고유 코드를 입력하시오. >> ");
 		String Shop_code = s.nextLine();
-		System.out.print("변경하고자 하는 쇼핑몰 상호명을 입력하시오.");
+		System.out.print("변경하고자 하는 쇼핑몰 상호명을 입력하시오. >> ");
 		String Shop_name = s.nextLine();
-		System.out.print("변경하고자 하는 쇼핑물 주소지를 입력하시오.");
+		System.out.print("변경하고자 하는 쇼핑물 주소지를 입력하시오. >> ");
 		String Shop_add1 = s.nextLine();
-		System.out.print("변경하고자 하는 쇼핑몰 주소지의 상세 주소를 입력하시오.");
+		System.out.print("변경하고자 하는 쇼핑몰 주소지의 상세 주소를 입력하시오. >> ");
 		String Shop_add2 = s.nextLine();
-		System.out.print("변경하고자 하는 쇼핑몰 전화번호를 입력하시오.");
+		System.out.print("변경하고자 하는 쇼핑몰 전화번호를 입력하시오. >> ");
 		String Shop_Phone_num = s.nextLine();
 		
 		ShopVO shopVO = new ShopVO();

@@ -39,6 +39,7 @@ public class Database {
 		
 		tb_gongji.add(gongji);
 	}
+	
 	public ArrayList<OrderVO> tb_order = new ArrayList<OrderVO>();
 	{
 		OrderVO order = new OrderVO();
@@ -86,6 +87,19 @@ public class Database {
 		tb_qna.add(qnaVO);
 	}
 	
+	{
+		QnaVO qnaVO = new QnaVO();
+		qnaVO.setQna_name("문의");
+		qnaVO.setQna_content("아직 발송 이전인데 색상 변경 가능할까요.");
+		qnaVO.setQna_password("1234");
+		qnaVO.setQna_date(tb_qna.get(0).getQna_date());
+		qnaVO.setUser_id("Admin");
+		qnaVO.setProduct_code("T" + "white" + "M" + "브이넥 니트".hashCode());
+		qnaVO.setProduct_name("브이넥 니트");
+		
+		tb_qna.add(qnaVO);
+	}
+	
 	public ArrayList<ReviewVO> tb_review = new ArrayList<ReviewVO>();
 	{
 		ReviewVO review = new ReviewVO();
@@ -93,6 +107,18 @@ public class Database {
 		review.setReview_content("촉감이 부드럽고 길이도 낭낭해서 환절기에 입기 좋을 것 같아요!!");
 		review.setReview_date(new Date());
 		review.setUser_id("okewon");
+		review.setProduct_code("T" + "white" + "M" + "브이넥 니트".hashCode());
+		review.setProduct_name("브이넥 니트");
+		
+		tb_review.add(review);
+	}
+	
+	{
+		ReviewVO review = new ReviewVO();
+		review.setReview_name("리뷰");
+		review.setReview_content("촉감이 부드럽고 길이도 낭낭해서 환절기에 입기 좋을 것 같아요!!");
+		review.setReview_date(new Date());
+		review.setUser_id("Admin");
 		review.setProduct_code("T" + "white" + "M" + "브이넥 니트".hashCode());
 		review.setProduct_name("브이넥 니트");
 		
@@ -127,7 +153,7 @@ public class Database {
 		user.setUser_id("okewon");
 		user.setUser_password("dhrgP0827");
 		user.setUser_date(new Date());
-		user.setUser_birth("1998042");
+		user.setUser_birth("19980424");
 		user.setUser_name("옥혜원");
 		user.setUser_add1("대전광역시 중구 중앙로 76");
 		user.setUser_add2("영민빌딩 2층");

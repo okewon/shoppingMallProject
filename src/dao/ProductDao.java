@@ -26,17 +26,17 @@ public class ProductDao {
 	
 	public void showEnrollProduct() { //새로 등록된 상품을 보여주는 함수
 		if(database.tb_product.size() == 0) {
-			System.out.println("등록된 상품이 없습니다.");
+			System.out.println("등록된 상품이 없습니다.\n");
 		} else {
 			System.out.println("종료 이전에 새로 등록된 상품을 조회합니다.\n");
 			System.out.println("------------------------------------------------------------------------------------------------------");
-			System.out.println("품목\t상품 코드\t상품 이름\t상품 가격\t상품 사이즈\t상품 색상\t상품 품목\t상품 재고\t상품 상세정보\t상품 등록일자");
+			System.out.println("품목\t\t상품 코드\t\t상품 이름\t\t상품 가격\t\t상품 사이즈\t\t상품 색상\t\t상품 품목\t\t상품 재고\t\t상품 상세정보\t\t상품 등록일자");
 			System.out.println("------------------------------------------------------------------------------------------------------");
 			for(int i = database.tb_product.size() - 1; i >= number; i--) {
 				System.out.print(database.tb_product.get(i).getProduct_code() + "\t"+ database.tb_product.get(i).getProduct_name() + "\t" + database.tb_product.get(i).getProduct_price() + "원\t" + database.tb_product.get(i).getProduct_size() + "\t" + database.tb_product.get(i).getProduct_color());
 				System.out.println("\t" + database.tb_product.get(i).getProduct_type() + "\t" + database.tb_product.get(i).getProduct_count() + "\t" + database.tb_product.get(i).getProduct_content() + "\t" + database.tb_product.get(i).getProduct_date());
 			}
-			System.out.println("------------------------------------------------------------------------------------------------------");
+			System.out.println("------------------------------------------------------------------------------------------------------\n");
 			number = database.tb_product.size();	
 		}
 	}
@@ -48,11 +48,11 @@ public class ProductDao {
 			System.out.println("기존에 등록되어있는 상품을 조회합니다.\n");
 			for(int i = database.tb_product.size() - 1; i < -1; i--) {
 				System.out.println("------------------------------------------------------------------------------------------------------");
-				System.out.println("상품 코드\t상품 이름\t상품 가격\t상품 사이즈\t상품 색상\t상품 품목\t상품 재고\t상품 상세정보\t상품 등록일자");
+				System.out.println("상품 코드\t\t상품 이름\t\t상품 가격\t\t상품 사이즈\t\t상품 색상\t\t상품 품목\t\t상품 재고\t\t상품 상세정보\t\t상품 등록일자");
 				System.out.println("------------------------------------------------------------------------------------------------------");
 				System.out.print(database.tb_product.get(i).getProduct_code() + "\t"+ database.tb_product.get(i).getProduct_name() + "\t" + database.tb_product.get(i).getProduct_price() + "원\t" + database.tb_product.get(i).getProduct_size() + "\t" + database.tb_product.get(i).getProduct_color());
 				System.out.println("\t" + database.tb_product.get(i).getProduct_type() + "\t" + database.tb_product.get(i).getProduct_count() + "\t" + database.tb_product.get(i).getProduct_content() + "\t" + database.tb_product.get(i).getProduct_date());
-				System.out.println("------------------------------------------------------------------------------------------------------");
+				System.out.println("------------------------------------------------------------------------------------------------------\n");
 			}				
 		}
 	}

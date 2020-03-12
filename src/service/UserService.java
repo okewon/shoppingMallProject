@@ -31,7 +31,7 @@ public class UserService {
 			UserVO user = new UserVO();
 			boolean flag = true;
 			while(true) {
-				System.out.print("아이디: " );
+				System.out.print("아이디 >> " );
 				String id = s.nextLine();				// 아이디 입력
 				String regex_id = "(\\w|\\W){5,20}";    // 규칙 : (모든 영어/숫자|모든 특수문자){5자리에서 20자리까지}    
 				Pattern p = Pattern.compile(regex_id);  // Pattern p에 위에서 만든 규칙을 대입
@@ -49,19 +49,18 @@ public class UserService {
 			               if(database.tb_user.size()==count) {  // 카운트를 통해 중복여부를 확인후 아이디로 set
 			            	   user.setUser_id(id);
 			            	   break;
-			               }else System.out.println("이미 존재하는 아이디 입니다.");
+			               }else System.out.println("이미 존재하는 아이디 입니다.\n");
 					}else
-						System.out.println("아이디를 다시 입력해주세요 (5~20 영문자,숫자)");
+						System.out.println("아이디를 다시 입력해주세요 (5~20 영문자,숫자) >> ");
 						
 			}
 			
 			while(true) {
-				System.out.print("비밀번호 : " );
+				System.out.print("비밀번호 >> " );
 				String password = s.nextLine();
 				String regex_password = "(\\w|\\W){8,16}";   //아이디와 동일하게  규칙 : (모든 영어/숫자|모든 특수문자){5자리에서 20자리까지} 
 				Pattern p = Pattern.compile(regex_password); //규칙을 p에 대입
 				Matcher m = p.matcher(password);			 //규칙에 비밀번호를 대입에서 m에 저장
-		//		System.out.println(m.matches());   
 				boolean flag1 = true;                        //flag1 변수를 이용할거야 
 				if(m.matches()) {                            //위의 규칙이 맞을 경우 
 					String regex_password1 = "\\w+";		 //새로운 규칙을 만들고
@@ -79,18 +78,18 @@ public class UserService {
 						break;
 					}
 					if(!flag1)  {
-						System.out.println("비밀번호를 다시 입력해주세요 (비밀 번호 8~16자 영문자, 숫자,특수문자사용)");
+						System.out.print("비밀번호를 다시 입력해주세요 (비밀 번호 8~16자 영문자, 숫자,특수문자사용) >> ");
 					}
 				}
-				else System.out.println("비밀번호를 다시 입력해주세요 (비밀 번호 8~16자 영문자, 숫자,특수문자사용)"); 
+				else System.out.print("비밀번호를 다시 입력해주세요 (비밀 번호 8~16자 영문자, 숫자,특수문자사용) >> "); 
 						
 			}
 			
 			while(true) {
 				System.out.println("-------비밀번호를 찾기 위한 질문-------");
-				System.out.print("당신이 가장 좋아하는 단어는? " );
+				System.out.print("당신이 가장 좋아하는 단어는? >> " );
 				String question = s.nextLine();
-				System.out.println("--------------------------------");
+				System.out.println("--------------------------------\n");
 				String regex_name = "(\\w|\\W)+";
 				Pattern p = Pattern.compile(regex_name);
 				Matcher m = p.matcher(question);
@@ -98,11 +97,11 @@ public class UserService {
 					user.setUser_password_question(question);
 					break;
 				}else
-					System.out.println("다시 입력해주세요");
+					System.out.print("다시 입력해주세요. >> ");
 			}
 			
 			while(true) {
-				System.out.print("이름: " );
+				System.out.print("이름 >> " );
 				String name = s.nextLine();
 				String regex_name = "\\W{2,15}";
 				Pattern p = Pattern.compile(regex_name);
@@ -111,11 +110,11 @@ public class UserService {
 					user.setUser_name(name);
 					break;
 				}else
-					System.out.println("이름을 다시 입력해주세요");
+					System.out.print("이름을 다시 입력해주세요 >> ");
 			}
 			
 			while(true) {
-				System.out.print("핸드폰 번호(-생략): ");
+				System.out.print("핸드폰 번호(-생략) >> ");
 				String phone = s.nextLine();	
 				String regex_phone =  "[0-9]{3}[0-9]{3,4}[0-9]{4}";
 				Pattern p = Pattern.compile(regex_phone);
@@ -124,11 +123,11 @@ public class UserService {
 					user.setUser_phone_num(phone);
 					break;
 				}else
-					System.out.println("핸드폰번호를 다시 입력해주세요");
+					System.out.print("핸드폰번호를 다시 입력해주세요 >> ");
 			}
 			
 			while(true) {
-				System.out.print("생년월일(8자리):");
+				System.out.print("생년월일(8자리) >> ");
 				String birth = s.nextLine();
 				String regex_birth = "[1-2]{1}[0-9]{7}";
 				Pattern p = Pattern.compile(regex_birth);
@@ -137,7 +136,7 @@ public class UserService {
 					user.setUser_birth(birth);
 					break;
 				}else
-					System.out.println("생년월일을 (8자리) 다시 입력해주세요");
+					System.out.print("생년월일을 (8자리) 다시 입력해주세요 >> ");
 				
 				
 			}
@@ -153,12 +152,12 @@ public class UserService {
 					user.setUser_add1(add1);
 					break;
 				}else
-					System.out.println("주소를 다시 입력해주세요");	
+					System.out.print("주소를 다시 입력해주세요 >> ");	
 				
 			}
 			
 			while(true) {
-				System.out.print("상세주소: ");
+				System.out.print("상세주소 >> ");
 				String add2 = s.nextLine();
 				String regex_add2= "(\\W|[0-9]){1,50}";
 				Pattern p = Pattern.compile(regex_add2);
@@ -167,11 +166,11 @@ public class UserService {
 					user.setUser_add2(add2);
 					break;
 				}else
-					System.out.println("주소를 다시 입력해주세요");	
+					System.out.print("주소를 다시 입력해주세요 >> ");	
 				
 			}
 			while(true) {
-				System.out.print("(선택사항:엔터를 누르세요) 이메일: ");
+				System.out.print("(선택사항:엔터를 누르세요) 이메일 >> ");
 				String email = s.nextLine();
 				String regex_email= "^[a-z0-9A-Z._-]*@([a-z0-9A-Z])+(\\.)+[a-zA-Z.]+$";
 				Pattern p = Pattern.compile(regex_email);
@@ -184,7 +183,7 @@ public class UserService {
 					user.setUser_email(email);
 					break;
 				}else
-					System.out.println("(선택사항:엔터를 누르세요) 이메일을 다시 입력해주세요 ");
+					System.out.print("(선택사항:엔터를 누르세요) 이메일을 다시 입력해주세요 >> ");
 			}
 			user.setUser_access(0);
 			
@@ -200,9 +199,9 @@ public class UserService {
 			int count = 0;
 			boolean flag = true;
 			do {
-				System.out.print("아이디 : ");
+				System.out.print("아이디 >> ");
 				String id = s.nextLine();
-				System.out.print("비밀번호 : ");
+				System.out.print("비밀번호 >> ");
 				String password = s.nextLine();
 				
 				HashMap<String,String>param = new HashMap<>();
@@ -215,21 +214,17 @@ public class UserService {
 				if(user == null){
 					count++;
 					System.err.println(count+" 번째 로그인 시도");
-					System.out.println("아이디 혹은 비밀번호를 잘못 입력하셨습니다.");
+					System.out.println("아이디 혹은 비밀번호를 잘못 입력하셨습니다.\n");
 					Session.LoginUser = null;
 					flag=false;
 				}else{
 					System.out.println("로그인 성공!");
 					UserService.logo();
-					System.out.println(user.getUser_name() + "님 환영합니다.");
+					System.out.println(user.getUser_name() + "님 환영합니다.\n");
 					Session.LoginUser = user;
 					flag=true;
 				}
 			} while(!flag&&count<3);
-			
-//			if(Session.LoginUser==null) {
-//				System.out.println("아이디 혹은 비밀번호를 ");
-//			}
 			
 		}
 		
@@ -288,9 +283,6 @@ public class UserService {
 					"                                                                                                          ");
 		}
 		
-		public static void logo3() {
-		}
-		
 		public void find_id() {
 			Scanner s = new Scanner(System.in);
 			String name;
@@ -303,24 +295,24 @@ public class UserService {
 			ArrayList<UserVO> abc = userdao.selectUserLsit();
 			total :do {
 				System.out.println("==========아이디 찾기=========");
-				System.out.println("이름을 입력해주세요");
+				System.out.print("이름을 입력해주세요 >> ");
 				name = s.nextLine();
-				System.out.println("생년월일을 입력해주세요(8자리)");
+				System.out.print("생년월일을 입력해주세요(8자리) >> ");
 				birth = s.nextLine();
-				System.out.println("핸드폰 번호를 입력해주세요(-생략)");
+				System.out.print("핸드폰 번호를 입력해주세요(-생략) >> ");
 				phone = s.nextLine();
 				System.out.println("비교중....");
 				for(int i=0;i<abc.size();i++) {
 					user = abc.get(i);
 					if((user.getUser_name().equals(name) && user.getUser_birth().equals(birth) &&user.getUser_phone_num().equals(phone))) {
 						System.out.println("사용자님의 아이디는 "+user.getUser_id()+"입니다");
-						do { System.out.println("비밀번호를 찾으시겠습니까? y/n"); answer =s.nextLine();
+						do { System.out.print("비밀번호를 찾으시겠습니까? y/n"); answer =s.nextLine();
 						if(answer.equals("y")||answer.equals("Y")) { find_password(); break total ;
 						} }while(!(answer.equals("N")||answer.equals("n")));
 						
 					}
 				}
-				System.out.println("찾을 수 없습니다.");
+				System.out.println("찾을 수 없습니다.\n");
 				count++;
 			}while (count<3);
 		}
@@ -337,22 +329,22 @@ public class UserService {
 			ArrayList<UserVO> abc = userdao.selectUserLsit();
 			id:do {
 				System.out.println("==========비밀번호 찾기=========");
-				System.out.println("아이디를 입력해주세요");
+				System.out.print("아이디를 입력해주세요 >> ");
 				id = s.nextLine();
 				System.out.println("비교중....");
 				for(int i=0; i<abc.size();i++) {
 					//하나씩 가져와서 equls로 비교 
 					if(abc.get(i).getUser_id().equals(id)) {
-						System.out.println("당신이 가장 좋아하는 단어는?");
+						System.out.print("당신이 가장 좋아하는 단어는? >> ");
 						answer = s.nextLine();
 						if(abc.get(i).getUser_id().equals(id)) {
-							System.out.println(abc.get(i).getUser_id()+"님의 비밀번호는 ["+abc.get(i).getUser_password()+"]입니다.");				
+							System.out.println(abc.get(i).getUser_id()+"님의 비밀번호는 ["+abc.get(i).getUser_password()+"]입니다.\n");				
 							break id;
 						}
 						
 					}
 				}
-				System.out.println("찾을 수 없습니다.");
+				System.out.println("찾을 수 없습니다.\n");
 				count++;
 			}while(count<3);
 		}
