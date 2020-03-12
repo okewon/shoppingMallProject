@@ -28,7 +28,7 @@ public class ReviewDao {
 		}else {
 			System.out.println(product_name + "에 대해 작성된 리뷰를 조회합니다.\n");
 			System.out.println("------------------------------------------------------------------------------------------------------");
-			System.out.print("게시글 번호\t\t작성자\t\t상품코드\t\t상품명\t\t게시글 제목\t\t게시글 내용\t\t게시일");
+			System.out.println("게시글 번호\t\t작성자\t\t상품코드\t\t상품명\t\t게시글 제목\t\t게시글 내용\t\t게시일");
 			System.out.println("------------------------------------------------------------------------------------------------------");
 			for(int i = database.tb_review.size() - 1; i >= 0; i--) {
 				if(database.tb_review.get(i).getProduct_name().equals(product_name)) {

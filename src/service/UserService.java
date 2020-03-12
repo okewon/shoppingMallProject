@@ -262,7 +262,7 @@ public class UserService {
 		      System.out.println("  ■■■■           ■■■■");
 		      System.out.println("     ■           ■ ");
 		      System.out.println("     ■    ■■■    ■ ");
-		      System.out.println("     ■■■■■   ■■■■■   ");
+		      System.out.println("     ■■■■■   ■■■■■   \n");
 		}
 		
 		public static void logo2() {
@@ -280,7 +280,7 @@ public class UserService {
 					"  ZZZZ              8ZZZZ      9ZZZE      ,ZZZZZ               ZZZZz    ZZZZZ     ZZZZZ      ZZZZZZZZB               ZZZZB  jZZZZB        ZZZZ9                                                                              \r\n" + 
 					"  ZZZZ              8ZZZZ       ZZZZZZZZZZZZZZZ     ZZZZZZZZEZZZZZZ     ZZZZZ     ZZZZZ      ,ZZZZZZZy    ZZZZZZZZEZZZZZZ   ZZZZZ         ZZZZZ                                                                              \r\n" + 
 					"  ZZZZ              ZZZZZ         8ZZZZZZZZZW       jZZZZZZZZZZZZ       ZZZZZ     ZZZZZ       DZZZZZZz    ZZZZZZZZZZZZZ    ZZZZZ           ZZZZZ                                                                             \r\n" + 
-					"                                                                                                          ");
+					"                                                                                                          \n");
 		}
 		
 		public void find_id() {

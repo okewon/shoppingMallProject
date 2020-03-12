@@ -65,11 +65,11 @@ public class AdminController {
 				orderStatus();
 				break;
 			case "6":
-				System.out.println("\t종료되었습니다.");
+				System.out.println("\t종료되었습니다.\n");
 				loop = true;
 				return;
 			default:
-				System.out.println("\t잘못된 입력입니다.");
+				System.out.println("\t잘못된 입력입니다.\n");
 				break;
 			}
 		} while(!loop);
@@ -104,7 +104,7 @@ public class AdminController {
         	product.showProduct();
         	break;
         case "5":
-        	System.out.println("상품 조회 메뉴가 종료됩니다.");
+        	System.out.println("상품 조회 메뉴가 종료됩니다.\n");
         	return;
         default:
         	System.out.println("잘못된 입력입니다.");

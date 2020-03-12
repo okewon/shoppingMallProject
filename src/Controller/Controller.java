@@ -26,7 +26,7 @@ public class Controller {
 			System.out.println("||\t2.로그인		\t||"             );
 			System.out.println("||\t3.아이디 혹은 비밀번호 찾기\t|| ");
 			System.out.println("||\t4.종료		\t|| "               );
-			System.out.println("==================================");
+			System.out.println("==================================\n");
 			System.out.print(">> ");
 			choice = s.nextLine();
 			switch(choice){

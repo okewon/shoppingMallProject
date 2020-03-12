@@ -23,6 +23,7 @@ public class ProductService {
 	ProductDao productDao = ProductDao.getInstance();
 
 	public void enrollProduct() {
+		int count = 0;
 		Scanner s = new Scanner(System.in);
 		
 		productDao.showTotalProduct();		
@@ -34,6 +35,7 @@ public class ProductService {
 			System.out.print("상품의 이름을 입력하시오.(종료 : Q) >> ");
 			String product_name = s.nextLine();
 			if(product_name.equals("Q")) {
+				System.out.println("총" + count + "개의 상품이 등록되었습니다.\n");
 				productDao.showEnrollProduct();
 				System.out.println("상품 등록이 종료되었습니다.\n");
 				break;
@@ -109,6 +111,7 @@ public class ProductService {
 			product.setProduct_date(product_date);
 			
 			productDao.EnrollProduct(product);
+			count++;
 		}while(true);
 		
 		System.out.println("상품이 등록되었습니다.\n");
@@ -227,7 +230,7 @@ public class ProductService {
 	}
 	
 	public void showProduct() {
-		productDao.showEnrollProduct();
+		productDao.showTotalProduct();
 	}
 	
 }
