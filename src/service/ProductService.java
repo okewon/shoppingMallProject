@@ -53,6 +53,10 @@ public class ProductService {
 			System.out.print("상품의 품목을 입력하세요. ");
 			System.out.print("구분(T: 티셔츠, P: 바지, O: 외투, B: 가방, S: 신발, A: 악세사리, H: 모자) >> ");
 			String product_type = s.nextLine();
+			if(product_type.length() > 1) {
+				System.out.println("상품의 품목은 대문자로 입력하시고, 빈칸 없이 한글자만 입력해주세요.");
+				continue;
+			}
 			switch (product_type) {
 			case "T":
 			case "P":
@@ -64,7 +68,8 @@ public class ProductService {
 				break;
 			default:
 				System.out.println("옳지 않은 상품 품목입니다.\n");
-				break;
+				System.out.println("상품의 품목은 대문자로 입력하시고, 빈칸 없이 한글자만 입력해주세요.");
+				continue;
 			}
 			System.out.print("상품의 재고 수량을 입력하세요. >> ");
 			int product_count = Integer.parseInt(s.nextLine());
@@ -146,6 +151,10 @@ public class ProductService {
 			System.out.print("수정하고자 하는 상품의 품목을 입력하세요. ");
 			System.out.println("구분(T: 티셔츠, P: 바지, O: 외투, B: 가방, S: 신발, A: 악세사리, H: 모자) >> ");
 			String product_type = s.nextLine();
+			if(product_type.length() > 1) {
+				System.out.println("상품의 품목은 대문자로 입력하시고, 빈칸 없이 한글자만 입력해주세요.");
+				continue;
+			}
 			switch (product_type) {
 			case "T":
 			case "P":
@@ -157,7 +166,8 @@ public class ProductService {
 				break;
 			default:
 				System.out.println("옳지 않은 상품 품목입니다.\n");
-				break;
+				System.out.println("상품의 품목은 대문자로 입력하시고, 빈칸 없이 한글자만 입력해주세요.");
+				continue;
 			}
 			System.out.print("수정하고자 하는 상품의 재고 수량을 입력하세요. >> ");
 			int product_count = Integer.parseInt(s.nextLine());
